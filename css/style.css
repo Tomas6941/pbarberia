@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0b0b0c;
+  color: #e5e5e5;
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(10,10,10,.85), rgba(10,10,10,.85)),
+  url('https://img.freepik.com/foto-gratis/herramientas-salon-marco-vintage-mesa-madera-trabajos-concepto-carrera_53876-143259.jpg?semt=ais_user_personalization&w=740&q=80') center/cover;
+}
+
+header h1 {
+  font-size: 3.8rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+header p {
+  font-size: 1.1rem;
+  margin-bottom: 35px;
+  color: #b3b3b3;
+}
+
+.btn {
+  background: linear-gradient(135deg, #2b2b2e, #1a1a1d);
+  padding: 14px 32px;
+  border: 1px solid #333;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.btn:hover {
+  background: #ffffff;
+  color: #000;
+  border: 1px solid #fff;
+}
+
+section {
+  padding: 100px 10%;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: grayscale(20%);
+  transition: transform .4s ease, filter .4s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.agenda {
+  background: #111113;
+}
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+input[type="date"] {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #1a1a1d;
+  color: #e5e5e5;
+  font-size: 0.95rem;
+}
+
+input[type="date"]:focus {
+  outline: none;
+  border: 1px solid #666;
+}
+
+footer {
+  text-align: center;
+  padding: 35px;
+  background: #0e0e10;
+  color: #777;
+  font-size: .85rem;
+  border-top: 1px solid #1f1f22;
+}

@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbería Elite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Barbería Elite</h1>
+  <p>Cortes clásicos y modernos · Barba · Atención premium</p>
+  <button class="btn" onclick="redirigirWhatsApp()">Reservar por WhatsApp</button>
+</header>
+
+<section>
+  <h2>Nuestros Trabajos</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70" alt="Corte 1">
+    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a" alt="Corte 2">
+    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033" alt="Corte 3">
+  </div>
+</section>
+
+<section class="agenda">
+  <h2>Agendá tu Turno</h2>
+  <div class="calendar-container">
+    <input type="date" id="fecha">
+    <button class="btn" onclick="confirmarTurno()">Confirmar Turno</button>
+    <p id="mensaje"></p>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Barbería Elite - Todos los derechos reservados
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

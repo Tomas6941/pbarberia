@@ -1,42 +1,99 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Barbería Elite</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10,10,10,0.95);
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid #1f1f22;
+    }
+
+    nav .logo {
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #ccc;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #fff;
+    }
+
+    header {
+      margin-top: 70px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
 
-<header>
+<nav>
+  <div class="logo">Barbería Elite</div>
+  <ul>
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#sobre">Sobre nosotros</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<header id="inicio">
   <h1>Barbería Elite</h1>
   <p>Cortes clásicos y modernos · Barba · Atención premium</p>
   <button class="btn" onclick="redirigirWhatsApp()">Reservar por WhatsApp</button>
 </header>
 
-<section>
-  <h2>Nuestros Trabajos</h2>
+<section id="sobre">
+  <h2>Sobre Nosotros</h2>
+  <p style="text-align:center; max-width:700px; margin:auto;">
+    Somos una barbería especializada en estilo clásico y moderno. Más de 10 años brindando atención personalizada y cortes de precisión.
+  </p>
+</section>
+
+<section id="servicios">
+  <h2>Servicios</h2>
   <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70" alt="Corte 1">
-    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a" alt="Corte 2">
-    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033" alt="Corte 3">
+    <div class="card"><h3>Corte clásico</h3></div>
+    <div class="card"><h3>Fade moderno</h3></div>
+    <div class="card"><h3>Arreglo de barba</h3></div>
   </div>
 </section>
 
-<section class="agenda">
-  <h2>Agendá tu Turno</h2>
+<section id="contacto" class="agenda">
+  <h2>Contacto</h2>
   <div class="calendar-container">
     <input type="date" id="fecha">
     <button class="btn" onclick="confirmarTurno()">Confirmar Turno</button>
     <p id="mensaje"></p>
   </div>
 </section>
-
-<footer>
-  © <span id="year"></span> Barbería Elite - Todos los derechos reservados
-</footer>
 
 <script src="js/script.js"></script>
 </body>

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}Panel Admin | Barbería Elite{% endblock %}
+{% block content %}
+<div class="admin-page">
+  <div class="admin-topbar">
+    <h1>Panel de Administración</h1>
+    <a href="{{ url_for('admin_logout') }}" class="btn btn-outline">Cerrar sesión</a>
+  </div>
+  <div class="adm-container">
+    <div class="adm-stats">
+      <div class="adm-stat"><span>{{ turnos|length }}</span><label>Turnos totales</label></div>
+      <div class="adm-stat"><span>{{ turnos|selectattr('estado','eq','pendiente')|list|length }}</span><label>Pendientes</label></div>
+      <div class="adm-stat"><span>{{ contactos|length }}</span><label>Mensajes</label></div>
+    </div>
+
+    <div class="adm-section">
+      <h2>Turnos solicitados</h2>
+      <div class="adm-table-wrap">
+        <table class="adm-table">
+          <thead><tr><th>#</th><th>Nombre</th><th>Teléfono</th><th>Servicio</th><th>Barbero</th><th>Fecha</th><th>Hora</th><th>Estado</th></tr></thead>
+          <tbody>
+            {% for t in turnos|reverse %}
+            <tr>
+              <td>{{ t.id }}</td>
+              <td>{{ t.nombre }}</td>
+              <td>{{ t.telefono }}</td>
+              <td>{{ t.servicio }}</td>
+              <td>{{ t.barbero or 'Sin preferencia' }}</td>
+              <td>{{ t.fecha }}</td>
+              <td>{{ t.hora }}</td>
+              <td><span class="status-badge status-{{ t.estado }}">{{ t.estado|capitalize }}</span></td>
+            </tr>
+            {% else %}
+            <tr><td colspan="8" style="text-align:center;color:#666;padding:32px">Sin turnos todavía</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="adm-section">
+      <h2>Mensajes de contacto</h2>
+      <div class="adm-table-wrap">
+        <table class="adm-table">
+          <thead><tr><th>Nombre</th><th>Email</th><th>Mensaje</th></tr></thead>
+          <tbody>
+            {% for c in contactos|reverse %}
+            <tr>
+              <td>{{ c.nombre }}</td>
+              <td>{{ c.email }}</td>
+              <td>{{ c.mensaje[:80] }}{% if c.mensaje|length > 80 %}...{% endif %}</td>
+            </tr>
+            {% else %}
+            <tr><td colspan="3" style="text-align:center;color:#666;padding:32px">Sin mensajes todavía</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

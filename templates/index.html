@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% block title %}Barbería Elite | Cortes, Barba y Estilo en Buenos Aires{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-img" style="background-image:url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1800')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Est. 2008 — Buenos Aires</div>
+    <h1 class="hero-h1">El arte del<br><em>buen corte.</em></h1>
+    <p>Experiencia, precisión y estilo en cada visita.<br>Tu mejor versión comienza en la silla.</p>
+    <div class="hero-btns">
+      <a href="{{ url_for('turnos') }}" class="btn btn-gold">Reservar turno</a>
+      <a href="{{ url_for('servicios') }}" class="btn btn-ghost">Ver servicios</a>
+    </div>
+  </div>
+  <div class="hero-badge-float">
+    <span>+15 años</span>
+    <small>de experiencia</small>
+  </div>
+</section>
+
+<section class="about-strip">
+  <div class="about-strip-inner">
+    <div class="as-item">
+      <strong>Cortes premium</strong>
+      <span>Tendencias y clásicos</span>
+    </div>
+    <div class="as-divider">—</div>
+    <div class="as-item">
+      <strong>Barberos certificados</strong>
+      <span>Formados en Europa</span>
+    </div>
+    <div class="as-divider">—</div>
+    <div class="as-item">
+      <strong>Productos exclusivos</strong>
+      <span>American Crew · Layrit</span>
+    </div>
+    <div class="as-divider">—</div>
+    <div class="as-item">
+      <strong>+5000 clientes</strong>
+      <span>Satisfechos</span>
+    </div>
+  </div>
+</section>
+
+<section class="services-preview">
+  <div class="sp-container">
+    <div class="sp-header">
+      <span class="eyebrow">Lo que hacemos</span>
+      <h2>Nuestros servicios</h2>
+    </div>
+    <div class="sp-grid">
+      <div class="sp-card">
+        <div class="sp-icon">✂️</div>
+        <h3>Corte de cabello</h3>
+        <p>Tijera, máquina o navaja. Adaptado a tu estilo y estructura facial.</p>
+        <span class="sp-price">desde $8.000</span>
+      </div>
+      <div class="sp-card sp-card--featured">
+        <div class="sp-icon">🪒</div>
+        <h3>Afeitado con navaja</h3>
+        <p>Ritual completo: toalla caliente, espuma artesanal y navaja de filo.</p>
+        <span class="sp-price">desde $12.000</span>
+      </div>
+      <div class="sp-card">
+        <div class="sp-icon">💈</div>
+        <h3>Corte + Barba</h3>
+        <p>El combo más elegido. Corte y perfilado de barba en una sola sesión.</p>
+        <span class="sp-price">desde $16.000</span>
+      </div>
+      <div class="sp-card">
+        <div class="sp-icon">🎨</div>
+        <h3>Color y mechas</h3>
+        <p>Coloraciones, degradados y técnicas modernas con productos premium.</p>
+        <span class="sp-price">desde $18.000</span>
+      </div>
+    </div>
+    <div class="sp-cta">
+      <a href="{{ url_for('servicios') }}" class="btn btn-outline">Ver todos los servicios</a>
+    </div>
+  </div>
+</section>
+
+<section class="team-section">
+  <div class="sp-container">
+    <div class="sp-header">
+      <span class="eyebrow">Los maestros</span>
+      <h2>Nuestro equipo</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-img" style="background-image:url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=400')"></div>
+        <div class="team-info">
+          <h3>Rodrigo Villar</h3>
+          <span>Master Barber · 12 años de experiencia</span>
+          <p>Especialista en estilos clásicos y fades. Formado en Madrid.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-img" style="background-image:url('https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400')"></div>
+        <div class="team-info">
+          <h3>Matías Torres</h3>
+          <span>Senior Barber · 8 años de experiencia</span>
+          <p>Experto en texturas, curly cuts y color creativo.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-img" style="background-image:url('https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=400')"></div>
+        <div class="team-info">
+          <h3>Lucas Pereyra</h3>
+          <span>Barber · 5 años de experiencia</span>
+          <p>Especialista en cortes modernos y técnicas de barba.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-reserva">
+  <div class="ctar-inner">
+    <div class="ctar-text">
+      <h2>¿Listo para tu mejor look?</h2>
+      <p>Reservá tu turno online en menos de 2 minutos.</p>
+    </div>
+    <a href="{{ url_for('turnos') }}" class="btn btn-gold btn-lg">Reservar ahora →</a>
+  </div>
+</section>
+
+<section class="testimonios-section">
+  <div class="sp-container">
+    <div class="sp-header">
+      <span class="eyebrow">Opiniones</span>
+      <h2>Lo que dicen nuestros clientes</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p>"El mejor corte que tuve en años. Rodrigo entendió exactamente lo que quería. 100% recomendable."</p>
+        <strong>— Pablo M., cliente desde 2018</strong>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p>"El afeitado con navaja fue una experiencia increíble. No voy a otro lugar nunca más."</p>
+        <strong>— Hernán V., cliente desde 2021</strong>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p>"Puntualidad, profesionalismo y resultado impecable. El combo + barba es lo mejor."</p>
+        <strong>— Tomás C., cliente desde 2020</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block title %}Reservar Turno | Barbería Elite{% endblock %}
+{% block content %}
+
+<div class="page-hero">
+  <h1>Reservá tu turno</h1>
+  <p>Online, rápido y sin complicaciones</p>
+</div>
+
+<div class="turnos-page">
+  <div class="tp-container">
+    <div class="tp-grid">
+      <div class="tp-form-wrap">
+        <div class="form-card">
+          <h2>Completá el formulario</h2>
+          <form method="POST" action="{{ url_for('turnos') }}" class="form">
+            <div class="form-group">
+              <label>Nombre completo *</label>
+              <input type="text" name="nombre" required placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+              <label>Teléfono / WhatsApp *</label>
+              <input type="tel" name="telefono" required placeholder="+54 11 XXXX-XXXX">
+            </div>
+            <div class="form-group">
+              <label>Servicio *</label>
+              <select name="servicio" required>
+                <option value="">Seleccioná un servicio</option>
+                <option>Corte clásico — $8.000</option>
+                <option>Fade / Degradado — $10.000</option>
+                <option>Skin fade — $12.000</option>
+                <option>Perfilado de barba — $6.000</option>
+                <option>Afeitado con navaja — $12.000</option>
+                <option>Corte + Perfilado de barba — $16.000</option>
+                <option>Corte + Afeitado con navaja — $18.000</option>
+                <option>Tratamiento VIP — $28.000</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Barbero preferido</label>
+              <select name="barbero">
+                <option value="">Sin preferencia</option>
+                <option>Rodrigo Villar</option>
+                <option>Matías Torres</option>
+                <option>Lucas Pereyra</option>
+              </select>
+            </div>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label>Fecha *</label>
+                <input type="date" name="fecha" id="fecha" required>
+              </div>
+              <div class="form-group">
+                <label>Horario *</label>
+                <select name="hora" required>
+                  <option value="">Elegí un horario</option>
+                  {% for h in ['09:00','09:30','10:00','10:30','11:00','11:30','12:00','12:30','14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30','18:00','18:30','19:00'] %}
+                    <option>{{ h }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-gold w-full">Confirmar turno</button>
+          </form>
+        </div>
+      </div>
+      <div class="tp-info">
+        <div class="tp-info-card">
+          <h3>Información importante</h3>
+          <ul>
+            <li>📋 Confirmamos tu turno por WhatsApp en menos de 30 min</li>
+            <li>⏰ Llegá 5 minutos antes de tu horario</li>
+            <li>🔁 Cancelaciones con 2 horas de anticipación</li>
+            <li>💳 Efectivo, transferencia o QR (sin recargo)</li>
+          </ul>
+        </div>
+        <div class="tp-info-card">
+          <h3>¿Preferís por WhatsApp?</h3>
+          <p>También podés reservar directamente:</p>
+          <a href="https://wa.me/5491156789012?text=Hola!%20Quiero%20reservar%20un%20turno" class="wa-btn wa-btn-big" target="_blank">
+            💬 Reservar por WhatsApp
+          </a>
+        </div>
+        <div class="tp-info-card">
+          <h3>Horarios de atención</h3>
+          <p>Lun – Vie: 9:00 – 20:00</p>
+          <p>Sábados: 9:00 – 18:00</p>
+          <p>Domingos: Cerrado</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

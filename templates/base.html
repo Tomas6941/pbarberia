@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Barbería Elite | Cortes de Primera{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="{{ url_for('index') }}" class="brand">
+      <span class="brand-scissors">✂</span>
+      <div class="brand-text">
+        <span class="brand-name">ELITE</span>
+        <span class="brand-sub">BARBERÍA</span>
+      </div>
+    </a>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="{{ url_for('index') }}">Inicio</a></li>
+      <li><a href="{{ url_for('servicios') }}">Servicios</a></li>
+      <li><a href="{{ url_for('galeria') }}">Galería</a></li>
+      <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+      <li><a href="{{ url_for('turnos') }}" class="nav-cta">Reservar turno</a></li>
+    </ul>
+  </div>
+</nav>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="flashes">
+      {% for cat, msg in messages %}
+        <div class="flash flash-{{ cat }}">{{ msg }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+{% block content %}{% endblock %}
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="brand footer-brand">
+          <span class="brand-scissors">✂</span>
+          <div class="brand-text">
+            <span class="brand-name">ELITE</span>
+            <span class="brand-sub">BARBERÍA</span>
+          </div>
+        </div>
+        <p class="footer-tagline">Donde el estilo se encuentra<br>con la tradición.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="{{ url_for('index') }}">Inicio</a></li>
+          <li><a href="{{ url_for('servicios') }}">Servicios</a></li>
+          <li><a href="{{ url_for('galeria') }}">Galería</a></li>
+          <li><a href="{{ url_for('turnos') }}">Reservar turno</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Horarios</h4>
+        <p>Lunes – Viernes: 9:00 – 20:00</p>
+        <p>Sábados: 9:00 – 18:00</p>
+        <p>Domingos: Cerrado</p>
+      </div>
+      <div>
+        <h4>Dónde estamos</h4>
+        <p>Av. Corrientes 2345, Piso 1<br>Ciudad Autónoma de Buenos Aires</p>
+        <p style="margin-top:12px">📞 (011) 5678-9012</p>
+        <a href="https://wa.me/5491156789012" class="wa-btn" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Barbería Elite. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

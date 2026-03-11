@@ -1,0 +1,15 @@
+{
+  "turnos": [
+    {
+      "id": 1,
+      "nombre": "Tomas Gonzalez",
+      "telefono": "+54 9 3517962251",
+      "servicio": "Corte clásico — $8.000",
+      "barbero": "",
+      "fecha": "2026-03-19",
+      "hora": "16:00",
+      "estado": "pendiente"
+    }
+  ],
+  "contactos": []
+}
